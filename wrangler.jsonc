@@ -5,6 +5,7 @@
   "compatibility_date": "2026-10-18",
   "workers_dev": true,
   "preview_urls": false,
+  "cache": { "enabled": false, "cross_version_cache": false },
   "exports": {
     "default": { "type": "worker", "cache": { "enabled": false } },
     "Reference": { "type": "worker", "cache": { "enabled": true } }

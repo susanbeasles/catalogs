@@ -7,6 +7,8 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    outputs:
+      revision: ${{ steps.revision.outputs.value }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -17,3 +19,46 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run verify
+      - id: revision
+        run: node --input-type=module -e 'import fs from "node:fs"; const data=JSON.parse(fs.readFileSync(".generated/tree.json","utf8")); fs.appendFileSync(process.env.GITHUB_OUTPUT,"value="+data.revision+"\n");'
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: catalogs-production
+      cancel-in-progress: true
+    steps:
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 24
+      - name: Deploy the validated catalog revision
+        env:
+          DEPLOY_HOOK: ${{ secrets.CATALOGS_DEPLOY_HOOK }}
+          REVISION: ${{ needs.check.outputs.revision }}
+        run: |
+          node --input-type=module <<'JS'
+          const origin = 'https://mcp.susanb.dev/info';
+          const expected = process.env.REVISION;
+          if (!/^[a-f0-9]{64}$/.test(expected ?? '')) throw new Error('Missing validated revision');
+          async function live() {
+            try {
+              const response = await fetch(origin, { method: 'HEAD', signal: AbortSignal.timeout(10000) });
+              return response.ok && response.headers.get('X-Catalog-Revision') === expected;
+            } catch { return false; }
+          }
+          if (await live()) { console.log('The validated revision is already live.'); process.exit(0); }
+          const hook = process.env.DEPLOY_HOOK;
+          if (!/^https:\/\/api\.cloudflare\.com\/client\/v4\/workers\/builds\/deploy_hooks\/[a-f0-9-]{36}$/.test(hook ?? '')) throw new Error('Deploy hook is not configured');
+          let response;
+          try { response = await fetch(hook, { method: 'POST', redirect: 'error', signal: AbortSignal.timeout(30000) }); }
+          catch { throw new Error('Build request outcome is uncertain; it was not retried.'); }
+          if (!response.ok) throw new Error('Cloudflare rejected the build request (' + response.status + ').');
+          const deadline = Date.now() + 360000;
+          while (Date.now() < deadline) {
+            if (await live()) { console.log('The validated catalog revision is deployed.'); process.exit(0); }
+            await new Promise(resolve => setTimeout(resolve, 5000));
+          }
+          throw new Error('The validated revision did not become live within six minutes.');
+          JS

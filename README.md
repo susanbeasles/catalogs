@@ -80,6 +80,8 @@ Requires Node 24+. Install with `npm ci`; use `npm run dev` for a local Worker. 
 
 Cloudflare Workers Builds connects this repo's `main` branch to the Worker. The build command is `npm run verify`, followed by `npx wrangler deploy`. Pull requests run the validation workflow without deployment credentials. The build fails before publication if definitions or checks fail.
 
+After validation, main's CI uses a branch-scoped deploy hook stored as the encrypted `CATALOGS_DEPLOY_HOOK` repository secret. It checks the deployed content revision and waits for the validated revision to become live. Unchanged runtime revisions skip a redundant deployment. Hook definitions and their secure provisioning helper live in `infra`; capability URLs are never committed or logged.
+
 Infrastructure is defined in [`susanbeasles/infra/environments/production/catalogs`](https://github.com/susanbeasles/infra/tree/feat/catalogs/environments/production/catalogs): existing resource adoption, the exact-host public Access policy, and native build settings. This repository owns content and application releases.
 
 Only authored reference data and application source belong here. Keep account keys, local backups, private scenes, and raw personal datasets elsewhere.

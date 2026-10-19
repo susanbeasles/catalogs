@@ -17,7 +17,7 @@ export function service(tree: Tree) {
         else if (path === '/mcp') response = await mcp(request, catalog);
         else if (!['GET', 'HEAD'].includes(request.method)) response = new Response(null, { status: 405, headers: { Allow: 'GET, HEAD, OPTIONS' } });
         else if (path === '/robots.txt') response = new Response('User-agent: *\nDisallow: /\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
-        else if (path === '/' || path === base) response = path === base || url.searchParams.get('format') === 'json' || request.headers.get('Accept')?.includes('application/json') ? Response.json({ version: tree.version, total: tree.records.length, catalogs, categories: catalog.categories(), mcp: '/mcp' }) : new Response(page, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+        else if (path === '/' || path === base) response = path === base || url.searchParams.get('format') === 'json' || request.headers.get('Accept')?.includes('application/json') ? Response.json({ version: tree.version, revision: tree.revision, total: tree.records.length, catalogs, categories: catalog.categories(), mcp: '/mcp' }) : new Response(page, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
         else {
           const record = catalog.get(path); const segments = path.startsWith(base + '/') ? path.slice(base.length + 1).split('/') : [];
           if (record) response = Response.json(record);
@@ -37,7 +37,8 @@ export function service(tree: Tree) {
       headers.set('X-Catalog-Revision', tree.revision);
       if (new URL(request.url).pathname === '/') headers.set('Vary', 'Accept');
       headers.set('Access-Control-Allow-Origin', '*'); headers.set('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS');
-      headers.set('Access-Control-Allow-Headers', 'Content-Type, MCP-Protocol-Version, Accept');
+      headers.set('Access-Control-Allow-Headers', 'Content-Type, MCP-Protocol-Version, Accept, If-None-Match');
+      headers.set('Access-Control-Expose-Headers', 'ETag, X-Catalog-Revision, X-Cache, CF-Cache-Status');
       headers.set('X-Content-Type-Options', 'nosniff'); headers.set('Referrer-Policy', 'no-referrer'); headers.set('X-Frame-Options', 'DENY');
       headers.set('Content-Security-Policy', "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'");
       if (!headers.has('Cache-Control')) headers.set('Cache-Control', request.method === 'GET' && response.ok ? 'public, max-age=60' : 'no-store');

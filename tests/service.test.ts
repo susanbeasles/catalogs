@@ -35,6 +35,13 @@ test('GET /info/diagrams searches complete definitions and treats an empty categ
   assert.equal((await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams?limit=1000'))).status, 400);
   assert.equal((await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams', { method: 'POST' }))).status, 405);
 });
+test('browser clients can read cache validators and revalidate across origins', async () => {
+  const preflight = await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams', { method: 'OPTIONS', headers: { Origin: 'https://example.com', 'Access-Control-Request-Method': 'GET', 'Access-Control-Request-Headers': 'If-None-Match' } }));
+  assert.equal(preflight.status, 204); assert.match(preflight.headers.get('Access-Control-Allow-Headers')!, /If-None-Match/);
+  const response = await app.fetch(new Request('https://mcp.susanb.dev/info'));
+  assert.match(response.headers.get('Access-Control-Expose-Headers')!, /ETag/);
+  assert.equal((await response.json() as { revision: string }).revision, 'test-revision');
+});
 test('search ranks exact names and aliases, filters categories, and paginates', () => {
   const c = new Catalog(tree);
   assert.equal(c.search('frequency distribution').results[0]!.slug, 'histogram');

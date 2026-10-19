@@ -42,11 +42,23 @@ jobs:
           const origin = 'https://mcp.susanb.dev/info';
           const expected = process.env.REVISION;
           if (!/^[a-f0-9]{64}$/.test(expected ?? '')) throw new Error('Missing validated revision');
+          let observed;
+          function report(state) {
+            const value = JSON.stringify(state);
+            if (value !== observed) { console.log('Live verification: ' + value); observed = value; }
+          }
           async function live() {
             try {
-              const response = await fetch(origin, { method: 'HEAD', signal: AbortSignal.timeout(10000) });
-              return response.ok && response.headers.get('X-Catalog-Revision') === expected;
-            } catch { return false; }
+              const response = await fetch(origin + '?revision=' + expected, { redirect: 'manual', headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(10000) });
+              const actual = response.headers.get('X-Catalog-Revision');
+              report({ status: response.status, revision: /^[a-f0-9]{64}$/.test(actual ?? '') ? actual : 'missing' });
+              await response.body?.cancel();
+              return response.ok && actual === expected;
+            } catch (error) {
+              const code = error?.cause?.code;
+              report({ error: ['TimeoutError', 'AbortError'].includes(error?.name) ? error.name : 'FetchError', code: typeof code === 'string' && /^[A-Z0-9_]+$/.test(code) ? code : 'unavailable' });
+              return false;
+            }
           }
           if (await live()) { console.log('The validated revision is already live.'); process.exit(0); }
           const hook = process.env.DEPLOY_HOOK;

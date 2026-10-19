@@ -4,6 +4,8 @@ A small, public CMS whose file structure is its router. Definitions are JSON dat
 
 The initial [diagram catalog](docs/catalog.md) contains **312 definitions in 24 categories**, including architecture, data flows, statistical charts, decisions, planning, service design, and maps.
 
+[Browse and search the live catalog](https://catalogs.anthonyvespoli.workers.dev). The public MCP address is `https://catalogs.anthonyvespoli.workers.dev/mcp`.
+
 ```text
 app/
   diagrams/
@@ -35,6 +37,21 @@ Read the [diagramming guide](docs/diagramming.md) before drawing. It covers sema
 MCP provides `catalog_search`, `catalog_get`, `catalog_compare`, `catalog_categories`, and `diagram_rules`. All are read-only. Search ranks names, aliases, keywords, summaries, and blurb text; it is lexical retrieval, with matched terms returned for inspection. It does not invent semantic recommendations or use a paid embedding service.
 
 Connect any compatible client to the deployed `/mcp` URL without authentication. This public service contains generic reference material only. It cannot access paid Excalidraw accounts, create scenes, or store backups. Those operations belong to the separate authenticated Excalidraw+ companion.
+
+For clients that accept an MCP JSON configuration:
+
+```json
+{
+  "mcpServers": {
+    "catalogs": {
+      "type": "http",
+      "url": "https://catalogs.anthonyvespoli.workers.dev/mcp"
+    }
+  }
+}
+```
+
+Client configuration syntax varies; use the remote HTTP or Streamable HTTP transport. A useful first call is `catalog_search` with `{ "query": "dataset provenance lineage", "limit": 5 }`, followed by `catalog_get` with the selected result's `path`.
 
 ## Add a catalog
 

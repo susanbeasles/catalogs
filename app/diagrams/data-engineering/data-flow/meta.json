@@ -2,6 +2,8 @@
   "slug": "data-flow",
   "name": "Data-flow diagram",
   "aliases": [
-    "DFD"
+    "DFD",
+    "Dataflow diagram",
+    "Data flow diagram"
   ]
 }

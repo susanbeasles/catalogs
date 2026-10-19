@@ -10,7 +10,7 @@ test('four definition files create an endpoint; slug mismatches and executable f
     const folder = join(root, 'tools', 'editors', 'canvas'); await mkdir(folder, { recursive: true });
     const data = { 'index.json': 'A concise entry about a canvas.', 'keywords.json': ['draw', 'canvas'], 'meta.json': { slug: 'canvas', name: 'Canvas', aliases: [] }, 'additionalInfo.json': ['https://example.com/docs'] };
     for (const [name, value] of Object.entries(data)) await writeFile(join(folder, name), JSON.stringify(value));
-    const result = await tree(root); assert.equal(result.records[0]!.path, '/tools/editors/canvas');
+    const result = await tree(root); assert.equal(result.records[0]!.path, '/info/tools/editors/canvas');
     await writeFile(join(folder, 'meta.json'), JSON.stringify({ ...data['meta.json'], slug: 'wrong' }));
     await assert.rejects(tree(root), /slug/i);
     await writeFile(join(folder, 'meta.json'), JSON.stringify(data['meta.json']));

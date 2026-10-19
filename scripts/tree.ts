@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { validate } from '../src/entry.ts';
+import { createHash } from 'node:crypto';
+import { base, validate } from '../src/entry.ts';
 import type { Tree } from '../src/entry.ts';
 
 const slug = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
@@ -26,7 +27,7 @@ export async function tree(root: string): Promise<Tree> {
     if (ids.has(key) || names.has(name)) throw new Error(`Duplicate catalog entry: ${key}`);
     ids.add(key); names.add(name);
     if (catalog === 'diagrams' && (entry.keywords.length < 5 || blurb.length < 400)) throw new Error(`Incomplete diagram recipe: ${folder}`);
-    records.push({ path: `/${catalog}/${category}/${type}`, catalog, category, entry });
+    records.push({ path: `${base}/${catalog}/${category}/${type}`, catalog, category, entry });
   }
-  return { version: '0.1.0', records };
+  return { version: '0.1.0', revision: createHash('sha256').update(JSON.stringify(records)).digest('hex'), records };
 }

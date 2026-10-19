@@ -4,7 +4,7 @@ A small, public CMS whose file structure is its router. Definitions are JSON dat
 
 The initial [diagram catalog](docs/catalog.md) contains **312 definitions in 24 categories**, including architecture, data flows, statistical charts, decisions, planning, service design, and maps.
 
-[Browse and search the live catalog](https://catalogs.anthonyvespoli.workers.dev). The public MCP address is `https://catalogs.anthonyvespoli.workers.dev/mcp`.
+The public reference API is [GET https://mcp.susanb.dev/info/diagrams?category=&search=dataflow](https://mcp.susanb.dev/info/diagrams?category=&search=dataflow). It returns JSON directly, without authentication or a JSON-RPC envelope.
 
 ```text
 app/
@@ -17,7 +17,7 @@ app/
         additionalInfo.json  Supporting URLs
 ```
 
-This folder becomes `/diagrams/architecture/system-context`. The category and catalog are inferred from the path. The slug in `meta.json` must equal the entry directory. No route registration or database migration is required.
+This folder becomes `/info/diagrams/architecture/system-context`. `/info` is the reference namespace; the remaining path follows the directory tree. The category and catalog are inferred from the path. The slug in `meta.json` must equal the entry directory. No route registration or database migration is required.
 
 `index.json` contains a Markdown string, beginning with a concise summary. Keep the actual explanation, selection criteria, visual grammar, construction, checks, pitfalls, example, and alternatives here. `keywords.json` and `additionalInfo.json` are string arrays. `meta.json` is `{ "slug": "system-context", "name": "System context diagram", "aliases": ["C4 context"] }`.
 
@@ -27,14 +27,25 @@ Read the [diagramming guide](docs/diagramming.md) before drawing. It covers sema
 
 ## Read and search
 
-- `GET /?format=json`: catalogs, categories, counts, and service version.
-- `GET /diagrams`: searchable, paginated summaries; use `?q=trust%20boundary&limit=10&offset=0`.
-- `GET /diagrams/<category>`: search within a category.
-- `GET /diagrams/<category>/<slug>`: the complete definition, with the main blurb, keywords, metadata, and source links.
-- `GET /`: a searchable human interface over the same data.
-- `POST /mcp`: a public, stateless Streamable HTTP MCP endpoint.
+- `GET /info`: catalogs, categories, counts, and service version.
+- `GET /info/diagrams?category=&search=dataflow`: ranked, complete definitions, including the main blurb, keywords, aliases, and source URLs.
+- `GET /info/diagrams?category=data-engineering&search=dataflow&limit=10&offset=0`: category filtering and pagination. Empty category means all categories; maximum page size is 50.
+- `GET /info/diagrams/<category>/<slug>`: one complete definition.
+- `GET /info/<catalog>`: the same API for any additional catalog under `app/`.
 
-MCP provides `catalog_search`, `catalog_get`, `catalog_compare`, `catalog_categories`, and `diagram_rules`. All are read-only. Search ranks names, aliases, keywords, summaries, and blurb text; it is lexical retrieval, with matched terms returned for inspection. It does not invent semantic recommendations or use a paid embedding service.
+Quotation marks, whitespace, and case are normalized in filters. `category=''&search="dataflow"` and `category=&search=dataflow` mean the same thing. Every result contains its canonical `/info/...` path. Search ranks names, aliases, keywords, summaries, and blurb text; matched terms are returned for inspection.
+
+## Caching and crawlers
+
+Successful reference GETs are cached at the Cloudflare edge for 24 hours. Equivalent filters, query ordering, default pagination, empty values, and tracking parameters share a cache key. Each key includes a SHA-256 revision of the catalog, serving code, build code, dependency lock, and runtime configuration, so a changed deployment immediately uses new edge entries. Cache writes run in the background; cache failures fall back to the source. The [Cache API](https://developers.cloudflare.com/workers/runtime-apis/cache/) operates separately at each Cloudflare location.
+
+Clients may reuse responses for 60 seconds. ETags support bodyless `304` responses; HEAD uses the same cached representation as GET. `X-Cache` reports HIT or MISS and `X-Catalog-Revision` identifies the source revision. An outer unversioned Cloudflare CDN entry is disabled to prevent it masking deployment invalidation. Errors, cookie-bearing/private responses, and POST operations are excluded from shared caching.
+
+`/robots.txt` disallows all crawling. Every application response carries `X-Robots-Tag: noindex, nofollow, noarchive, nosnippet`; HTML also includes a matching robots meta tag.
+
+## Optional MCP adapter
+
+The existing Streamable HTTP adapter at `https://catalogs.anthonyvespoli.workers.dev/mcp` provides `catalog_search`, `catalog_get`, `catalog_compare`, `catalog_categories`, and `diagram_rules`. All are read-only. The plain GET API above is the primary reference interface.
 
 Connect any compatible client to the deployed `/mcp` URL without authentication. This public service contains generic reference material only. It cannot access paid Excalidraw accounts, create scenes, or store backups. Those operations belong to the separate authenticated Excalidraw+ companion.
 
@@ -53,9 +64,11 @@ For clients that accept an MCP JSON configuration:
 
 Client configuration syntax varies; use the remote HTTP or Streamable HTTP transport. A useful first call is `catalog_search` with `{ "query": "dataset provenance lineage", "limit": 5 }`, followed by `catalog_get` with the selected result's `path`.
 
+Cloudflare currently rejects the legacy `Python-urllib/3.9` user agent before requests reach this Worker (error 1010). Node fetch, curl, and requests carrying the tested `python-httpx/0.28.1` or `modelcontextprotocol/1.0` user agents return successfully. Use a current MCP client; the service itself requires no authentication.
+
 ## Add a catalog
 
-Create `app/<catalog>/<category>/<slug>/` with the same four definition files. Run `npm run verify`, commit, and push to `main`. The new tree is indexed automatically. Catalog names, categories, and slugs use lowercase kebab-case. A category has no separate metadata file.
+Create `app/<catalog>/<category>/<slug>/` with the same four definition files. Run `npm run verify`, commit, and push to `main`. The new tree is indexed and exposed at `/info/<catalog>` automatically. Catalog names, categories, and slugs use lowercase kebab-case. A category has no separate metadata file.
 
 Do not add synonym entries to inflate catalog size. Keep aliases on the canonical entry. A variant deserves its own definition when its encoding, selection criteria, or semantic grammar changes. Cite primary sources and distinguish a formal notation from an explanatory pattern view.
 
@@ -64,5 +77,7 @@ Do not add synonym entries to inflate catalog size. Keep aliases on the canonica
 Requires Node 24+. Install with `npm ci`; use `npm run dev` for a local Worker. `npm run verify` builds the directory index, checks types, runs tests, and bundles a dry-run deployment. `npm run deploy` publishes through Wrangler for an authenticated operator.
 
 Cloudflare Workers Builds connects this repo's `main` branch to the Worker. The build command is `npm run verify`, followed by `npx wrangler deploy`. Pull requests run the validation workflow without deployment credentials. The build fails before publication if definitions or checks fail.
+
+Infrastructure is defined in [`susanbeasles/infra/environments/production/catalogs`](https://github.com/susanbeasles/infra/tree/feat/catalogs/environments/production/catalogs): existing resource adoption, the exact-host public Access policy, and native build settings. This repository owns content and application releases.
 
 Only authored reference data and application source belong here. Keep account keys, local backups, private scenes, and raw personal datasets elsewhere.

@@ -1,4 +1,5 @@
 import type { Record as CatalogRecord, Tree } from './entry.ts';
+import { base } from './entry.ts';
 const stop = new Set('a an and are as at be by can chart charts diagram diagrams for from how i in is it me my of on or our please show that the their this to use using want we what when where which with'.split(' '));
 export function words(text: string): string[] { return [...new Set(text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').split(' ').filter(w => w && !stop.has(w)))]; }
 const normalize = (text: string) => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
@@ -19,7 +20,7 @@ export class Catalog {
   categories(catalog?: string) {
     const counts = new Map<string, number>();
     for (const r of this.records) if (!catalog || r.catalog === catalog) counts.set(`${r.catalog}/${r.category}`, (counts.get(`${r.catalog}/${r.category}`) ?? 0) + 1);
-    return [...counts].sort().map(([path, count]) => ({ path: '/' + path, count }));
+    return [...counts].sort().map(([path, count]) => ({ path: base + '/' + path, count }));
   }
   search(query = '', catalog?: string, category?: string, offset = 0, limit = 20) {
     if (query.length > 300 || !Number.isSafeInteger(offset) || offset < 0 || !Number.isSafeInteger(limit) || limit < 1 || limit > 50) throw new Error('Invalid search parameters');

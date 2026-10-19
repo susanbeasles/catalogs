@@ -4,16 +4,36 @@ import { service } from '../src/service.ts';
 import { Catalog } from '../src/catalog.ts';
 import type { Tree } from '../src/entry.ts';
 
-const tree: Tree = { version: 'test', records: [
-  { path: '/diagrams/architecture/context', catalog: 'diagrams', category: 'architecture', entry: { slug: 'context', name: 'System context', category: 'architecture', aliases: ['C4 context'], keywords: ['system', 'people', 'external', 'boundaries', 'architecture'], summary: 'Show the system and external actors.', blurb: 'Use to explain system scope and external actors.', additionalInfo: ['https://c4model.com/diagrams/system-context'] } },
-  { path: '/diagrams/distribution/histogram', catalog: 'diagrams', category: 'distribution', entry: { slug: 'histogram', name: 'Histogram', category: 'distribution', aliases: ['frequency distribution'], keywords: ['distribution', 'bins', 'frequency', 'observations', 'spread'], summary: 'Show the distribution of observations.', blurb: 'Count observations in numeric bins, retaining denominators.', additionalInfo: ['https://vega.github.io/vega-lite/examples/histogram.html'] } },
+const tree: Tree = { version: 'test', revision: 'test-revision', records: [
+  { path: '/info/diagrams/architecture/context', catalog: 'diagrams', category: 'architecture', entry: { slug: 'context', name: 'System context', category: 'architecture', aliases: ['C4 context'], keywords: ['system', 'people', 'external', 'boundaries', 'architecture'], summary: 'Show the system and external actors.', blurb: 'Use to explain system scope and external actors.', additionalInfo: ['https://c4model.com/diagrams/system-context'] } },
+  { path: '/info/diagrams/distribution/histogram', catalog: 'diagrams', category: 'distribution', entry: { slug: 'histogram', name: 'Histogram', category: 'distribution', aliases: ['frequency distribution'], keywords: ['distribution', 'bins', 'frequency', 'observations', 'spread'], summary: 'Show the distribution of observations.', blurb: 'Count observations in numeric bins, retaining denominators.', additionalInfo: ['https://vega.github.io/vega-lite/examples/histogram.html'] } },
+  { path: '/info/diagrams/data-engineering/data-flow', catalog: 'diagrams', category: 'data-engineering', entry: { slug: 'data-flow', name: 'Data-flow diagram', category: 'data-engineering', aliases: ['DFD', 'Dataflow diagram'], keywords: ['dataflow', 'processes', 'stores', 'flows', 'entities'], summary: 'Show records moving through transformations.', blurb: 'Use when explaining how records move between processes and stores.', additionalInfo: ['https://www.visual-paradigm.com/guide/data-flow-diagram/what-is-data-flow-diagram/'] } },
 ] };
 const app = service(tree);
 test('directory paths expose definitions, categories, and the catalog without route registration', async () => {
-  const response = await app.fetch(new Request('https://example.com/diagrams/architecture/context'));
+  const response = await app.fetch(new Request('https://example.com/info/diagrams/architecture/context'));
   assert.equal(response.status, 200); assert.equal((await response.json() as { entry: { slug: string } }).entry.slug, 'context');
-  assert.equal((await (await app.fetch(new Request('https://example.com/diagrams/architecture'))).json() as { total: number }).total, 1);
-  assert.equal((await app.fetch(new Request('https://example.com/diagrams/unknown'))).status, 404);
+  assert.equal((await (await app.fetch(new Request('https://example.com/info/diagrams/architecture'))).json() as { total: number }).total, 1);
+  assert.equal((await app.fetch(new Request('https://example.com/info/diagrams/unknown'))).status, 404);
+});
+test('GET /info/diagrams searches complete definitions and treats an empty category as all categories', async () => {
+  for (const query of ['category=&search=dataflow', 'category=%27%27&search=%22dataflow%22']) {
+    const response = await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams?' + query));
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get('Content-Type')!, /application\/json/);
+    const data = await response.json() as { search: string; total: number; results: { path: string; slug: string; blurb: string; aliases: string[]; additionalInfo: string[] }[] };
+    assert.equal(data.search, 'dataflow'); assert.equal(data.total, 1);
+    const entry = data.results[0]!;
+    assert.equal(entry.slug, 'data-flow'); assert.match(entry.blurb, /processes and stores/);
+    assert.ok(entry.aliases.includes('DFD')); assert.equal(entry.additionalInfo.length, 1);
+    assert.equal((await app.fetch(new Request('https://mcp.susanb.dev' + entry.path))).status, 200);
+  }
+  const filtered = await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams?category=architecture&search=dataflow'));
+  assert.equal((await filtered.json() as { total: number }).total, 0);
+  const page = await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams?category=data-engineering&limit=1'));
+  assert.equal((await page.json() as { total: number }).total, 1);
+  assert.equal((await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams?limit=1000'))).status, 400);
+  assert.equal((await app.fetch(new Request('https://mcp.susanb.dev/info/diagrams', { method: 'POST' }))).status, 405);
 });
 test('search ranks exact names and aliases, filters categories, and paginates', () => {
   const c = new Catalog(tree);

@@ -5,6 +5,10 @@
   "compatibility_date": "2026-10-18",
   "workers_dev": true,
   "preview_urls": false,
+  "exports": {
+    "default": { "type": "worker", "cache": { "enabled": false } },
+    "Reference": { "type": "worker", "cache": { "enabled": true } }
+  },
   "observability": { "enabled": true, "head_sampling_rate": 0.1 },
   "limits": { "cpu_ms": 50 }
 }

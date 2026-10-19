@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { cached } from '../src/cache.ts';
+import { cached, fill } from '../src/cache.ts';
 import { service } from '../src/service.ts';
 
 const app = service({ version: 'test', revision: 'content-a', records: [{
@@ -11,13 +11,17 @@ const app = service({ version: 'test', revision: 'content-a', records: [{
 function harness() {
   const entries = new Map<string, Response>(); const tasks: Promise<unknown>[] = []; let calls = 0;
   const source = { async fetch(request: Request) { calls++; return app.fetch(request); } };
-  const storage = {
-    async match(request: Request) { return entries.get(request.url)?.clone(); },
-    async put(request: Request, response: Response) { entries.set(request.url, response); },
-  };
   return {
     entries, calls: () => calls, flush: () => Promise.all(tasks),
-    fetch: (path: string, headers?: HeadersInit, revision = 'content-a', method = 'GET') => cached(new Request('https://mcp.susanb.dev' + path, { headers, method }), source, revision, storage, task => tasks.push(task)),
+    fetch: (path: string, headers?: HeadersInit, revision = 'content-a', method = 'GET') => cached(new Request('https://mcp.susanb.dev' + path, { headers, method }), source, revision, {
+      async fetch(request, init) {
+        const key = init.cf.cacheKey, hit = entries.get(key);
+        const response = hit?.clone() ?? await fill(new Request(request, { method: 'GET' }), source, revision);
+        if (!hit && response.status === 200 && !response.headers.has('Set-Cookie') && !/no-store|private/.test(response.headers.get('Cache-Control') ?? '')) entries.set(key, response.clone());
+        const headers = new Headers(response.headers); headers.set('CF-Cache-Status', hit ? 'HIT' : 'MISS');
+        return new Response(response.body, { status: response.status, headers });
+      },
+    }),
   };
 }
 
@@ -68,8 +72,14 @@ test('robots disallows every crawler and noindex applies to JSON, HTML, and erro
   assert.match(await html.text(), /name="robots" content="noindex/);
 });
 
-test('cookie-bearing responses stay out of shared storage', async () => {
-  let writes = 0;
-  const response = await cached(new Request('https://mcp.susanb.dev/info/diagrams'), { async fetch() { return new Response('private', { headers: { 'Set-Cookie': 'session=fixture' } }); } }, 'test', { async match() { return undefined; }, async put() { writes++; } }, () => {});
-  assert.equal(await response.text(), 'private'); assert.equal(writes, 0);
+test('cookie-bearing responses retain their uncacheable headers', async () => {
+  const response = await fill(new Request('https://mcp.susanb.dev/info/diagrams'), { async fetch() { return new Response('private', { headers: { 'Set-Cookie': 'session=fixture' } }); } }, 'test');
+  assert.equal(await response.text(), 'private'); assert.equal(response.headers.get('Cache-Control'), null); assert.equal(response.headers.get('Set-Cookie'), 'session=fixture');
+});
+test('caller credentials and identity headers never enter the cached entrypoint', async () => {
+  const request = new Request('https://mcp.susanb.dev/info/diagrams?search=system', { headers: { Authorization: 'Bearer synthetic-fixture', Cookie: 'session=fixture', 'Cf-Access-Authenticated-User-Email': 'fixture@example.com' } });
+  await cached(request, app, 'test', { async fetch(inner) {
+    for (const name of ['Authorization', 'Cookie', 'Cf-Access-Authenticated-User-Email']) assert.equal(inner.headers.get(name), null);
+    return fill(inner, app, 'test');
+  } });
 });

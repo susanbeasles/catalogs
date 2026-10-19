@@ -1,5 +1,6 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import { URL } from 'node:url';
 import { tree } from './tree.ts';
 const data = await tree(new URL('../app', import.meta.url).pathname);
 if (!data.records.length) throw new Error('Cannot deploy an empty catalog');

@@ -37,7 +37,9 @@ Quotation marks, whitespace, and case are normalized in filters. `category=''&se
 
 ## Caching and crawlers
 
-Successful reference GETs are cached at the Cloudflare edge for 24 hours. Equivalent filters, query ordering, default pagination, empty values, and tracking parameters share a cache key. Each key includes a SHA-256 revision of the catalog, serving code, build code, dependency lock, and runtime configuration, so a changed deployment immediately uses new edge entries. Cache writes run in the background; cache failures fall back to the source. The [Cache API](https://developers.cloudflare.com/workers/runtime-apis/cache/) operates separately at each Cloudflare location.
+Successful reference GETs use [Workers Caching](https://developers.cloudflare.com/workers/cache/) for 24 hours. The uncached gateway normalizes filters and invokes a cached `Reference` entrypoint through an in-process loopback. Equivalent filters, query ordering, default pagination, empty values, and tracking parameters share one cache key. A cache hit skips the reference handler and search-index initialization. The Cache API is deliberately avoided because Cloudflare does not support it behind Access.
+
+Each key includes a SHA-256 revision of the catalog, serving code, build code, dependency lock, and runtime configuration. Native cache keys also include the deployed Worker version; cross-version reuse is disabled. Changes therefore invalidate edge results automatically. Caller authorization, cookies, and Access identity headers never enter the shared reference entrypoint. Cache failures fall back to the source.
 
 Clients may reuse responses for 60 seconds. ETags support bodyless `304` responses; HEAD uses the same cached representation as GET. `X-Cache` reports HIT or MISS and `X-Catalog-Revision` identifies the source revision. An outer unversioned Cloudflare CDN entry is disabled to prevent it masking deployment invalidation. Errors, cookie-bearing/private responses, and POST operations are excluded from shared caching.
 

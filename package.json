@@ -2,7 +2,7 @@
   "name": "catalogs", "version": "0.1.0", "private": true, "type": "module",
   "engines": { "node": ">=24" },
   "scripts": {
-    "build": "node scripts/build.ts",
+    "build": "node scripts/build.ts && wrangler types .generated/runtime.d.ts",
     "check": "tsc --noEmit",
     "test": "node --test tests/*.test.ts",
     "dev": "npm run build && wrangler dev",

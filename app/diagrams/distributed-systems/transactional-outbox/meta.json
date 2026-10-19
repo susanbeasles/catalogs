@@ -1,0 +1,7 @@
+{
+  "slug": "transactional-outbox",
+  "name": "Transactional outbox diagram",
+  "aliases": [
+    "Outbox relay diagram"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "quantile-dotplot",
+  "name": "Quantile dotplot",
+  "aliases": [
+    "Quantile dot plot",
+    "Frequency-framed uncertainty plot"
+  ]
+}

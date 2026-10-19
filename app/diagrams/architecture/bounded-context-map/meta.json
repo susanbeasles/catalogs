@@ -1,0 +1,8 @@
+{
+  "slug": "bounded-context-map",
+  "name": "Bounded context map",
+  "aliases": [
+    "Context map",
+    "DDD context map"
+  ]
+}

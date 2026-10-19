@@ -1,0 +1,8 @@
+{
+  "slug": "density-contour-plot",
+  "name": "Density contour plot",
+  "aliases": [
+    "Bivariate KDE contours",
+    "Density isolines"
+  ]
+}

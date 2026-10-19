@@ -1,0 +1,8 @@
+{
+  "slug": "game-tree",
+  "name": "Game tree",
+  "aliases": [
+    "Extensive-form game",
+    "Sequential game tree"
+  ]
+}

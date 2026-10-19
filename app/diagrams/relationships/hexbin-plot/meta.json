@@ -1,0 +1,7 @@
+{
+  "slug": "hexbin-plot",
+  "name": "Hexbin plot",
+  "aliases": [
+    "Hexagonal binned scatterplot"
+  ]
+}

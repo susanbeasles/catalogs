@@ -1,0 +1,8 @@
+{
+  "slug": "artifact-promotion",
+  "name": "Artifact promotion diagram",
+  "aliases": [
+    "Release promotion map",
+    "Environment promotion diagram"
+  ]
+}

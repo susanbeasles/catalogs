@@ -1,0 +1,7 @@
+{
+  "slug": "cqrs",
+  "name": "CQRS diagram",
+  "aliases": [
+    "Command-query responsibility segregation diagram"
+  ]
+}

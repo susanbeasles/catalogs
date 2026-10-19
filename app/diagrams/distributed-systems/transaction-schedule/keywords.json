@@ -1,0 +1,7 @@
+[
+  "transactions",
+  "reads",
+  "writes",
+  "isolation",
+  "serialization"
+]

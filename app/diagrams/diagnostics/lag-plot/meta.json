@@ -1,0 +1,8 @@
+{
+  "slug": "lag-plot",
+  "name": "Lag plot",
+  "aliases": [
+    "Lagged scatterplot",
+    "Serial dependence plot"
+  ]
+}

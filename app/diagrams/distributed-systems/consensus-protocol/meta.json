@@ -1,0 +1,8 @@
+{
+  "slug": "consensus-protocol",
+  "name": "Consensus protocol diagram",
+  "aliases": [
+    "Replicated log protocol diagram",
+    "Raft timeline"
+  ]
+}

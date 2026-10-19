@@ -1,0 +1,8 @@
+{
+  "slug": "precision-recall-curve",
+  "name": "Precision-recall curve",
+  "aliases": [
+    "PR curve",
+    "Precision versus recall"
+  ]
+}

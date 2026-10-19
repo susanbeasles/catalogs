@@ -1,0 +1,7 @@
+{
+  "slug": "consistent-hash-ring",
+  "name": "Consistent hash ring",
+  "aliases": [
+    "Token ring partition map"
+  ]
+}

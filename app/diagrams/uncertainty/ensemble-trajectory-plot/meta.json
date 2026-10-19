@@ -1,0 +1,8 @@
+{
+  "slug": "ensemble-trajectory-plot",
+  "name": "Ensemble trajectory plot",
+  "aliases": [
+    "Spaghetti forecast plot",
+    "Predictive trajectory ensemble"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "orchestration-dag",
+  "name": "Orchestration DAG",
+  "aliases": [
+    "Workflow dependency graph",
+    "Task DAG"
+  ]
+}

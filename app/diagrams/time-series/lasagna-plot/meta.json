@@ -1,0 +1,8 @@
+{
+  "slug": "lasagna-plot",
+  "name": "Lasagna plot",
+  "aliases": [
+    "Time-series heatmap",
+    "Dense series heatmap"
+  ]
+}

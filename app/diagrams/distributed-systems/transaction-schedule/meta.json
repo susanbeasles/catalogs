@@ -1,0 +1,8 @@
+{
+  "slug": "transaction-schedule",
+  "name": "Transaction schedule diagram",
+  "aliases": [
+    "Concurrency schedule",
+    "Read-write history diagram"
+  ]
+}

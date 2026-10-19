@@ -1,0 +1,8 @@
+{
+  "slug": "cusum-chart",
+  "name": "CUSUM chart",
+  "aliases": [
+    "Cumulative sum control chart",
+    "Tabular CUSUM"
+  ]
+}

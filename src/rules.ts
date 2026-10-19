@@ -1,0 +1,45 @@
+export const rules = {
+  purpose: 'Make a truthful, editable diagram that answers one question at the reader’s viewing size.',
+  requirements: [
+    'Use the domain’s names. Mark current, proposed, inferred, and unknown facts explicitly; never invent components, measures, ownership, or relationships.',
+    'Choose a view before drawing. Keep one abstraction level and one principal question per frame. Split views when detail no longer fits comfortably.',
+    'No crossing relationship connectors. Reorder nodes, allocate routing lanes, or split the view. Do not imply a junction where independent paths merely meet.',
+    'No arrow or shape boundary over text. Reserve clear label areas and explicit whitespace. Keep group titles inside a dedicated header band.',
+    'Keep labels short: a domain noun, a type if ambiguous, and at most a short responsibility. Put explanation in the companion blurb.',
+    'Bind relationship arrows to their actual target shapes. A line that visually touches a box is not a binding.',
+    'Preserve truthful scales and data encodings. If plotted data intrinsically cross or overlap, choose facets or another chart rather than altering data to eliminate crossings.',
+    'Render and inspect every final frame at its intended reading size. Geometry checks and successful API writes do not prove visual quality.',
+  ],
+  layout: {
+    units: 'Excalidraw scene units at approximately 100% zoom; these are house defaults, not universal standards.',
+    containerPadding: 16, groupPadding: 24, groupHeader: 48, textClearance: 8, boundaryTextClearance: 4,
+    siblingGap: 40, routingLane: 24, nodeFont: 20, labelFont: 18, headingFont: 30,
+    guidance: 'Increase spacing before shrinking text. Measure labels with the actual renderer; wrap at semantic boundaries. Start architecture and pipelines left to right, decisions top to bottom. Route connectors after node placement. Keep feedback routes on outer lanes. Use one restrained palette with textual or shape redundancy. Prefer zero to one roughness and solid fills for dense technical views.',
+  },
+  semantics: [
+    'Architecture: state scope, responsibility, ownership boundaries, and communication intent. A system boundary, a deployment boundary, and a trust boundary mean different things.',
+    'Data flow: name the record or event on each edge. Describe keys, grain, cardinality, transformations, storage, provenance, lifecycle, and failure handling in linked detail.',
+    'Distinguish logical relationships, temporal order, and physical deployment. Use separate views when their coexistence makes the picture ambiguous.',
+    'Asynchronous delivery is not exactly-once processing. A queue is not automatically durable storage. Show only guarantees supported by evidence.',
+    'For data charts, label units and denominators, disclose aggregation and missingness, and retain uncertainty. Bar lengths need a meaningful baseline; line-chart scale choices require explicit context.',
+  ],
+  accessibility: [
+    'Aim for at least 4.5:1 contrast for normal text and 3:1 for essential graphical boundaries. Check actual foreground/background pairs and final export size.',
+    'Do not convey status, ownership, or category by color alone. Include labels or a redundant pattern/shape cue and a compact legend.',
+    'Supply a short text explanation of the diagram’s key meaning. Editable text inside a canvas does not by itself provide an accessible reading order.',
+  ],
+  releaseChecks: [
+    'Semantic: audience and question clear; correct level; no unsupported facts; edges match their direction and intent; symbols are explained.',
+    'Geometric: zero connector crossings, text collisions, clipped labels, unexplained overlapping nodes, or cramped boundary headers.',
+    'Visual: inspect rendered overview and each detail frame; verify legibility at delivery size and recheck after all fixes.',
+    'Preservation: save editable native content plus all embedded images. Verify backup integrity and distinguish an export from a restore-tested backup.',
+  ],
+  sources: [
+    'https://c4model.com/diagrams/notation', 'https://c4model.com/diagrams/checklist',
+    'https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html',
+    'https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html',
+    'https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html',
+    'https://www.w3.org/WAI/WCAG22/Understanding/use-of-color',
+    'https://plus.excalidraw.com/docs/mcp/tools',
+  ],
+};

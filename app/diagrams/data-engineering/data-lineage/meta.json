@@ -1,0 +1,8 @@
+{
+  "slug": "data-lineage",
+  "name": "Data lineage diagram",
+  "aliases": [
+    "Provenance graph",
+    "Column lineage diagram"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "variable-bin-histogram",
+  "name": "Variable-bin histogram",
+  "aliases": [
+    "Unequal-width histogram",
+    "Density-scaled histogram"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "container-image-layers",
+  "name": "Container image layer diagram",
+  "aliases": [
+    "Image filesystem stack",
+    "OCI layer diagram"
+  ]
+}

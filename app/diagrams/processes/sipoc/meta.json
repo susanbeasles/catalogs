@@ -1,0 +1,7 @@
+{
+  "slug": "sipoc",
+  "name": "SIPOC diagram",
+  "aliases": [
+    "Suppliers-inputs-process-outputs-customers"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "failover-topology",
+  "name": "Failover topology",
+  "aliases": [
+    "Disaster recovery topology",
+    "Active-standby map"
+  ]
+}

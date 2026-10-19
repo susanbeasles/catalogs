@@ -1,0 +1,8 @@
+{
+  "slug": "system-landscape",
+  "name": "System landscape diagram",
+  "aliases": [
+    "C4 landscape",
+    "Application landscape"
+  ]
+}

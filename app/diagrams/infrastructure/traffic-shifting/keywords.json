@@ -1,0 +1,7 @@
+[
+  "canary",
+  "blue-green",
+  "routing",
+  "rollout",
+  "rollback"
+]

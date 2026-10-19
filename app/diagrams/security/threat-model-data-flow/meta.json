@@ -1,0 +1,8 @@
+{
+  "slug": "threat-model-data-flow",
+  "name": "Threat-model data-flow diagram",
+  "aliases": [
+    "Security DFD",
+    "Trust-boundary DFD"
+  ]
+}

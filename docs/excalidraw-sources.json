@@ -1,0 +1,519 @@
+{
+  "capturedAt": "2026-10-19T02:59:27Z",
+  "scope": "All reachable documentation links under the Plus and OSS SDK /docs roots, excluding category wrappers and query/fragment variants. Not every external link or open-source source file.",
+  "attempts": 102,
+  "successfulFetches": 100,
+  "uniqueSuccessfulUrls": 99,
+  "unvisited": [],
+  "review": "Integration-critical authentication, MCP, scene-content, pagination, creation/recovery, schema and export pages read for implementation; remaining pages reviewed at topic/endpoint overview level. Downloaded does not mean every generated response field was manually audited.",
+  "pages": [
+    {
+      "url": "https://docs.excalidraw.com/docs/",
+      "sha256": "aa2c306ea8a6553b5beaf9073c3becfee69bf6f984c64c382b9eb67bfe22ac3f",
+      "bytes": 17377
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs",
+      "sha256": "fbf44ba080cb36c84296ce84d5586344d123eaa8ee8f51d501e6522caec86f77",
+      "bytes": 176362
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs",
+      "sha256": "aa2c306ea8a6553b5beaf9073c3becfee69bf6f984c64c382b9eb67bfe22ac3f",
+      "bytes": 17377
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api",
+      "sha256": "5f25e90a01109d46853f3854fc934b2949438f8d10b9c0c6bdf66fb595f14818",
+      "bytes": 18233
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/customizing-styles",
+      "sha256": "b0a0381cbeb4e2dec61ebcd54f5300a2ef337c9d8fa68bbac96c61dcfc5e82d5",
+      "bytes": 34719
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/development",
+      "sha256": "4c5ecff970e36495aa0cbd858e76f10f21130d6e0734cde1989bedf234f3931b",
+      "bytes": 21350
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/faq",
+      "sha256": "0d78fe25f70873f4808b0fdbdf475ebfeacbe9074d54e9c61297c4737e7f7586",
+      "bytes": 21869
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation",
+      "sha256": "e91c441f07a4296e4b735e81bdac7938d407f0694f79e3c98e2623631ec02d8e",
+      "bytes": 28137
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/integration",
+      "sha256": "3f21d5df40983019830ad9e0c8f8aa5c69124d9956071920e2e97b54241441fb",
+      "bytes": 108087
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/mermaid-to-excalidraw/installation",
+      "sha256": "97e6acb21cf6e10cd5fe6416b5828d7852b6271cef1a1180bdd4b3df734f9eea",
+      "bytes": 27890
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/codebase/json-schema",
+      "sha256": "5c3b893339824e3bb78ab35110d5a5a32143dcfb469336fdf04c6c81941393e5",
+      "bytes": 33360
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/introduction/contributing",
+      "sha256": "db9419c68aad4ce617347c396ae216934822dfb694435005687b8acb53f331ff",
+      "bytes": 24214
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/introduction/development",
+      "sha256": "12bb37702fdc6a3cf0c358ef65ca761788aff396802d5c7dd8f8f89c85e0b4a0",
+      "bytes": 34021
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api",
+      "sha256": "757f0696fef30f44cfa46dcea6903a150922733874d8773dee6d864596dc6e22",
+      "bytes": 212362
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/mcp",
+      "sha256": "ce5c6ece8542cc936485c9f324feac560537741517e25c1f21cb0bec88b23283",
+      "bytes": 181477
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/self-hosting/excalidraw-open-source-selfhosting",
+      "sha256": "858ac80f021f305638284f828135dcc562c343d66abfe7616b4f2fe21df851cf",
+      "bytes": 174338
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/self-hosting/excalidraw-plus-self-hosting",
+      "sha256": "a246f4d04246eb318fb2f6a91ab5b0977bc84403044739d3370a8d6e1720763b",
+      "bytes": 177833
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/children-components",
+      "sha256": "ecb8314e9995d4b3d27a4c572fa2d97b33adf7e168bd6fb05efe4884aa0f2aa2",
+      "bytes": 20947
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/constants",
+      "sha256": "83b7640f20a22bfca985bb1079842df076aaac9dab7894f2ec56ce53f3468a26",
+      "bytes": 25417
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/excalidraw-element-skeleton",
+      "sha256": "e3c34c2fc6c6bf85f2dcce29bd40ec6eee242a44ce5aa453af7eac863172c95f",
+      "bytes": 175213
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/props",
+      "sha256": "c419b46f43f020cc6c8c92865a8ce606b6e3d4925f5b3dcc1dc3d054b179b0af",
+      "bytes": 75240
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/utils",
+      "sha256": "a76b6e297efeac54b916b65e10b580d9f138dcdc2234b136b37f9e939132780f",
+      "bytes": 129665
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/mermaid-to-excalidraw/api",
+      "sha256": "f81d074b9be3afb067c5303f29765145fb3394899584378e1ab413300ff0137e",
+      "bytes": 44976
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/mermaid-to-excalidraw/codebase",
+      "sha256": "0e26d199a14c8bf601952c1f41ed2cb9138b7788917c833476aff331f743facc",
+      "bytes": 18442
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/mermaid-to-excalidraw/development",
+      "sha256": "7182b246e9162c56cf1f5561b0a22d406e276ad75a80f97eca5fe7597392e62c",
+      "bytes": 26483
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/codebase/frames",
+      "sha256": "88585fad80ed76fa10622f6bc4db1966c9dec67ce2e5f00206546193e8842adb",
+      "bytes": 18949
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/authentication",
+      "sha256": "38fc9a98ba028e34028675b724058cad4d2b474f8c96a456841f64da78351df4",
+      "bytes": 201612
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections",
+      "sha256": "b7301a6862018272c5edccccc254f6bde761ee54f1c8a85a8a01e344302a5c70",
+      "bytes": 188427
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/endpoints",
+      "sha256": "38f0b94c5ea550edd141dca20ec6794c1bbaa43ae1fcd9f98cb7785dd7de7065",
+      "bytes": 247373
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/error-handling",
+      "sha256": "111a878d3804e6cbc83073c5a2b25b304a54d7f6462370ae5d3d7269caa0b431",
+      "bytes": 192705
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/getting-started",
+      "sha256": "f2e48076c99754d12cfb6972a7842d66621973a5be9b18f7113b9b21bba40783",
+      "bytes": 219091
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/invites",
+      "sha256": "c69a9f3c2599a9120c03aa699f235c0917eb9c47959841061a1182cf330d1e8f",
+      "bytes": 184046
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/logs",
+      "sha256": "8ec5c8489f7ca0481d659637aa27e5ba37f6d8d8532d8810967c71f59879952b",
+      "bytes": 174932
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/pagination",
+      "sha256": "947f22475f4b38a851dd7ed79253c6c1085542f6be281c4f93af3544e8f13600",
+      "bytes": 196534
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/rate-limiting",
+      "sha256": "b9815de075818fa2776ea825317d7e7df0b1b4e7f56ad5f2deee430f5a07f4d5",
+      "bytes": 199167
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scene-content",
+      "sha256": "78f0b6863a8db507f51bee1c2b338b1136b5bfbed85f857c837e681c7b351adf",
+      "bytes": 179959
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scene-content-schema",
+      "sha256": "3eb96220e3ac568db18e58071b58bbd42fc0bfd5f725b2e5df163f305db40bcc",
+      "bytes": 676542
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes",
+      "sha256": "d4ce378c5ba9440e02d84d6ea50c58f338d62019ff044d37634ab1db094cdee2",
+      "bytes": 195129
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/users",
+      "sha256": "992d409df5708d43fafd8bc851014f9908734db592ee17621cc0d00c22b0cd33",
+      "bytes": 181774
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace",
+      "sha256": "6d161693278095d76e04d303890210a866b3079021f420745fe6bc230e6c2a1a",
+      "bytes": 197637
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/mcp/auth-and-permissions",
+      "sha256": "3b9f17fbdb7b9557b19fb7a27f8663bf481ba61f23202b24ddb4ef64a4093f55",
+      "bytes": 171359
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/mcp/getting-started",
+      "sha256": "e168121334419237e8e571137f920bbfdbd6356a0690fa71085d8e5d4fe373ad",
+      "bytes": 240426
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/mcp/mcp-api-key-types",
+      "sha256": "3d2778a8cc896f04ce62fc9c48d3de515f420d898246219d6ab3016cd000110e",
+      "bytes": 193348
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/mcp/tools",
+      "sha256": "1d29277d9c7a56eda30dbcbf52d6dea7b757c39c6ae262b3f3ed0a034fa1a236",
+      "bytes": 202269
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/self-hosting",
+      "sha256": "9eb4f756cebeeeb32f45024ae96bf11499b37c8adf56a02812f36f650ad6b097",
+      "bytes": 163770
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/API/utils/export",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/API/utils/restore",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/children-components/footer",
+      "sha256": "c648fd6c3fa65a04cd1989e06433e5e6925a2313d10149e58349037026a80c5e",
+      "bytes": 53042
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/children-components/live-collaboration-trigger",
+      "sha256": "195ec69138e3fdad017e5541defd3a4bad068c806aeb4f707e11da942b997a8e",
+      "bytes": 55683
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/children-components/main-menu",
+      "sha256": "869d69f4015c1c9923ba30341b658d524b9b4d92e31c7549f5150551e01f4175",
+      "bytes": 93564
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/children-components/sidebar",
+      "sha256": "08954edc1861f29546ce90f1d37f21b17d7c7d31cb6e6e29b85827cdd62ba44d",
+      "bytes": 57541
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/children-components/welcome-screen",
+      "sha256": "34f64998dd854a762baa57f630ae14148f452563811ab08b156ce06f4873bcf2",
+      "bytes": 58275
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/props/excalidraw-api",
+      "sha256": "1f87020592282d2166ced0ac268e234783378a1f134a3f4b6f94fd80cd804ac6",
+      "bytes": 148523
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/props/initialdata",
+      "sha256": "bfe3ceef5a268924a14276426530f2a457a134d67940b65fdd21e957ba1d29fb",
+      "bytes": 50208
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/props/render-props",
+      "sha256": "937cf02184285d02d88b94e97a7baf6b9d9c2fae473601183a1dc18973446ef7",
+      "bytes": 50409
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/props/ui-options",
+      "sha256": "dd29747553c953730eda2bbc194b2427cb5a31635645122b72ff47dcbbfa2bf3",
+      "bytes": 42756
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/utils/export",
+      "sha256": "e3c929da7255bedfd7d45c955e0631ec35541f4e24504f7b2b734fdca680c0aa",
+      "bytes": 65734
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/utils/restore",
+      "sha256": "ac0e7f9710344c94a6a7ba459564a7128beea7a535ad7bf14b88d4e917672bba",
+      "bytes": 35893
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/mermaid-to-excalidraw/codebase/new-diagram-type",
+      "sha256": "76b04c1d0852595fa0976078db819084a8b1292383a19b4627e7bec3729d5ccb",
+      "bytes": 25003
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/mermaid-to-excalidraw/codebase/parser",
+      "sha256": "ca5d3c083025978a4d40c03fadca0ec4b685371322e28d955466af9bb3c77772",
+      "bytes": 27565
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections/collectionId-delete",
+      "sha256": "0dd4dce1a44721ca78edb49c208186388cf476723e9732511382ac7a81490a01",
+      "bytes": 268289
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections/collectionId-get",
+      "sha256": "27d5fc5119d18629940d73ebc4ec282053a53423707a0a93bc0ade8b4efc42ae",
+      "bytes": 277561
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections/collectionId-patch",
+      "sha256": "9769ba8c6a8ab3155e627fa4764fc8438fb9c8e17d1bbbe9060ea2f329e76c98",
+      "bytes": 293469
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections/collectionId-scenes-get",
+      "sha256": "1b8fd80371e4e6cb9367e23c5b32b218eeb7a98123d2e098a3ae143af24ed48a",
+      "bytes": 372098
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections/collectionId-scenes-post",
+      "sha256": "4441a5c4bedc8ec3eb32a5c2626c7389fb1823a8be8a378183cfe67c3be15255",
+      "bytes": 368188
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections/get",
+      "sha256": "bb3546a12b5080930de5b9fc1855e6374ad6c28b60a5d41a1460ed067ae3586e",
+      "bytes": 285806
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/collections/post",
+      "sha256": "c158798a5c57c499fdca51a8ae0d90f9c56dbea8683b828c773d96fdf9796d8a",
+      "bytes": 279966
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/invites/workspaces-invites-get",
+      "sha256": "cf50e67158f211bbdab5effdfab50bbd9e86e0a891e9c1e1fa7f011298b160d3",
+      "bytes": 277442
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/invites/workspaces-invites-inviteId-delete",
+      "sha256": "7aa2f310e23428791dfc4574c75c412660d55f0f8ec5902d785ee17db654db83",
+      "bytes": 256610
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/invites/workspaces-invites-inviteId-get",
+      "sha256": "94ed4152f851724d5b3f62355c0731062106887915d390b214b9d8e960ef3da2",
+      "bytes": 269346
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/invites/workspaces-invites-inviteId-patch",
+      "sha256": "11e2b5da8436c9c422e88a0e11378b8d723d6490cdea4faa8f35161a4901dfa3",
+      "bytes": 293224
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/invites/workspaces-invites-post",
+      "sha256": "6c3d153955817256cd0438a798113e2619ef4cf54be9f8177b4b68ff217ee1c2",
+      "bytes": 281813
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/logs/get",
+      "sha256": "e28518705fdf03a95c69350ebca7a0d2b6e0fd7245039e8721ece5b1348d8000",
+      "bytes": 296190
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scene-content/scenes-sceneId-content-get",
+      "sha256": "1a17a3390d02f930d7dd7f59e8342fb77db3251967ab6a2a53df880f7494c3f8",
+      "bytes": 285478
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scene-content/scenes-sceneId-content-patch",
+      "sha256": "9af17fd5a2a528fca2057f8e48713e61ad1de0a1d172f9fdf089adb9baf03d51",
+      "bytes": 309203
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scene-content/scenes-sceneId-content-put",
+      "sha256": "3462a57c8dcc7595636c59e6c0e9c1886a3f8fc260423b530257d8ef98437a27",
+      "bytes": 311143
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/collections-collectionId-scenes-get",
+      "sha256": "acf403ce4e3a7b6a9b023fbd1487b1c434b58d087d0aec531d76bf4154f3a02d",
+      "bytes": 374092
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/collections-collectionId-scenes-post",
+      "sha256": "3bf1c94c4a9ede9f1b1b0deb06ae007cf2af6793547f2265955193d426918eee",
+      "bytes": 370210
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/get",
+      "sha256": "ae0632e4b607292fde0a82cf0f47b08439ac084dab37d92abf013ca71ca1a5f4",
+      "bytes": 373852
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/post",
+      "sha256": "ccfc7adec25911975aea3f6a9feabff74a0ac3dbc3fd26915c7c2da230ce1040",
+      "bytes": 372552
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/sceneId-content-get",
+      "sha256": "671d8ef9119ea7fac3f1fd7f1b577446df8b5d150a6071d6d1e6f8c553c6852c",
+      "bytes": 289941
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/sceneId-content-patch",
+      "sha256": "1545c5a9174d1d52357e5f3bc76c1446faa1d30725f758dc0fbac9abba7998d3",
+      "bytes": 313632
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/sceneId-content-put",
+      "sha256": "f986b6fe7363586a032c5f9de13af8208923dadebe3c7c21f3b8698c1b876d2d",
+      "bytes": 315604
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/sceneId-delete",
+      "sha256": "972528a936e7c91833a926ee4b65b8e9912417c14ada34700201c1eb25b7d737",
+      "bytes": 262080
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/sceneId-get",
+      "sha256": "12d67efae0c8275e0c61e28f0f85a4562dec5e412a4ea017339be7acbd6a5f4d",
+      "bytes": 353514
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/scenes/sceneId-patch",
+      "sha256": "191e76ae3b8fd022052b5b02014fc108976073e46a0a58fc929734ae28413757",
+      "bytes": 375083
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/users/workspaces-users-get",
+      "sha256": "37d7064e513fadbc6b71811b77b671c52f3dc3f21c13277cff8d8fbea3bd7701",
+      "bytes": 330477
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/users/workspaces-users-userId-delete",
+      "sha256": "b4876aebe9c979c1cdc267b7728f98b85cd6f2907b9ea090d9a915f529e493b4",
+      "bytes": 255886
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/users/workspaces-users-userId-get",
+      "sha256": "43aa7793d8a8b2c4e82c53871d79310f19a34bb6c17c5ea509eeb9893d47ef21",
+      "bytes": 311927
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/users/workspaces-users-userId-patch",
+      "sha256": "fb7d36fc6724a39a1b93be36ed7ec5b6b2ee08ef4f96421dccf687b15ec9849b",
+      "bytes": 340982
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-get",
+      "sha256": "10633daccdb3f4214970f8fef2d164b11bdb82d6651b7693ad3f4feb53a6fd97",
+      "bytes": 276294
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-invites-get",
+      "sha256": "3f80ece307a8d3e07654447780754cf6647643f415ef1b93f680bb5ac4cb4fc5",
+      "bytes": 281545
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-invites-inviteId-delete",
+      "sha256": "30a3bde41bf1ce6acdcae50e91be8bfec4c6e7d978d617b7494f20cd378e8962",
+      "bytes": 260102
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-invites-inviteId-get",
+      "sha256": "4ffe1cdeda6c426a10ea80ae2f42a758f3e4e9c2db2aa6f612f26d1ca4c9c0f7",
+      "bytes": 273554
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-invites-inviteId-patch",
+      "sha256": "835e3d5f31b6209459ca262027c8e5467b9922ccaf1c831de13eaf1655ef8e2c",
+      "bytes": 297311
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-invites-post",
+      "sha256": "7e4c5cc816245e836681855fb9ac6dd912ca0f82b1e861f9ae3448a2cd758623",
+      "bytes": 285860
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-patch",
+      "sha256": "5a37af9ec495ca79351dbd4f84ef2d3553a5dcd431d1680fa1c14178527f14ac",
+      "bytes": 294855
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-users-get",
+      "sha256": "54697b653bf28efab9329dfe05183dc077585611e4cdbbcae3ac817cc35846a5",
+      "bytes": 335293
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-users-userId-delete",
+      "sha256": "2bce3f0a1c6acc48826e3d6f5b1c86b0c8743aacb3aa7579807b7060f05459cc",
+      "bytes": 260717
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-users-userId-get",
+      "sha256": "081023fc32ddf11a2bd8c18b2694723b003f023c766e4a011a8ad24cfad74085",
+      "bytes": 316714
+    },
+    {
+      "url": "https://plus.excalidraw.com/docs/api/workspace/workspaces-users-userId-patch",
+      "sha256": "7b17b1c37243a581f1fa744cec4e2d945e774c77fe28b729d944dcdd1b0a0fd8",
+      "bytes": 345773
+    },
+    {
+      "url": "https://docs.excalidraw.com/docs/@excalidraw/mermaid-to-excalidraw/codebase/parser/flowchart",
+      "sha256": "43b354bc394c273b204749bb6cbc5fb3d3f675e0c8c2e58f3622ccea25c8c3d5",
+      "bytes": 67564
+    }
+  ]
+}

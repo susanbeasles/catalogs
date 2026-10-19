@@ -1,0 +1,7 @@
+[
+  "kubernetes",
+  "owners",
+  "controllers",
+  "pods",
+  "garbage-collection"
+]

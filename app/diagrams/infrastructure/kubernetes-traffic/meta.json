@@ -1,0 +1,7 @@
+{
+  "slug": "kubernetes-traffic",
+  "name": "Kubernetes traffic-flow diagram",
+  "aliases": [
+    "Kubernetes request path"
+  ]
+}

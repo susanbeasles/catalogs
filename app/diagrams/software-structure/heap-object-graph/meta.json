@@ -1,0 +1,8 @@
+{
+  "slug": "heap-object-graph",
+  "name": "Heap object graph",
+  "aliases": [
+    "Retention graph",
+    "Heap reference graph"
+  ]
+}

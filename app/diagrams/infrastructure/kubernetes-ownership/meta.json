@@ -1,0 +1,8 @@
+{
+  "slug": "kubernetes-ownership",
+  "name": "Kubernetes ownership diagram",
+  "aliases": [
+    "Kubernetes resource relationship map",
+    "Controller ownership graph"
+  ]
+}

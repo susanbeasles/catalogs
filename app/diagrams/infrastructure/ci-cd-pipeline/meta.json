@@ -1,0 +1,8 @@
+{
+  "slug": "ci-cd-pipeline",
+  "name": "CI/CD pipeline diagram",
+  "aliases": [
+    "Delivery pipeline",
+    "Build-and-deploy workflow"
+  ]
+}

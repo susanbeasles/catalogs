@@ -1,0 +1,8 @@
+{
+  "slug": "git-history",
+  "name": "Git history graph",
+  "aliases": [
+    "Commit DAG",
+    "Branch graph"
+  ]
+}

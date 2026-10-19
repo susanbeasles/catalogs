@@ -1,0 +1,8 @@
+{
+  "slug": "petri-net",
+  "name": "Petri net",
+  "aliases": [
+    "Place-transition net",
+    "P/T net"
+  ]
+}

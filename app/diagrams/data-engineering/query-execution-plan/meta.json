@@ -1,0 +1,8 @@
+{
+  "slug": "query-execution-plan",
+  "name": "Query execution plan",
+  "aliases": [
+    "Query plan tree",
+    "EXPLAIN diagram"
+  ]
+}

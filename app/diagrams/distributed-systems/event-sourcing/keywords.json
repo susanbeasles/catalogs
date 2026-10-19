@@ -1,0 +1,7 @@
+[
+  "events",
+  "append-only",
+  "aggregate",
+  "replay",
+  "projection"
+]

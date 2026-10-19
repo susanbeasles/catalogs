@@ -1,0 +1,8 @@
+{
+  "slug": "autocorrelation-plot",
+  "name": "Autocorrelation plot",
+  "aliases": [
+    "ACF plot",
+    "Correlogram by lag"
+  ]
+}

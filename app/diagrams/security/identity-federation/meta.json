@@ -1,0 +1,8 @@
+{
+  "slug": "identity-federation",
+  "name": "Identity federation diagram",
+  "aliases": [
+    "Federated trust topology",
+    "Identity provider trust map"
+  ]
+}

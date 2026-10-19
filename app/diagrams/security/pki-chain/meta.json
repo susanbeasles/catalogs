@@ -1,0 +1,8 @@
+{
+  "slug": "pki-chain",
+  "name": "PKI certificate chain",
+  "aliases": [
+    "Certificate path diagram",
+    "Trust chain diagram"
+  ]
+}

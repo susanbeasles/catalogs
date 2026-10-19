@@ -1,0 +1,8 @@
+{
+  "slug": "ecdf",
+  "name": "ECDF",
+  "aliases": [
+    "Empirical cumulative distribution",
+    "Cumulative frequency curve"
+  ]
+}

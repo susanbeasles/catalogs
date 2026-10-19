@@ -1,0 +1,8 @@
+{
+  "slug": "service-dependency-map",
+  "name": "Service dependency map",
+  "aliases": [
+    "Runtime dependency map",
+    "Service map"
+  ]
+}

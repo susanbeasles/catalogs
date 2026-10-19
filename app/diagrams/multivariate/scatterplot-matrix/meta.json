@@ -1,0 +1,8 @@
+{
+  "slug": "scatterplot-matrix",
+  "name": "Scatterplot matrix",
+  "aliases": [
+    "SPLOM",
+    "Pairs plot"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "authorization-graph",
+  "name": "Authorization graph",
+  "aliases": [
+    "Permission relationship graph",
+    "Access graph"
+  ]
+}

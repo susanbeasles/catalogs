@@ -1,0 +1,8 @@
+{
+  "slug": "data-lake-zones",
+  "name": "Data lake zone diagram",
+  "aliases": [
+    "Medallion architecture diagram",
+    "Lakehouse zone map"
+  ]
+}

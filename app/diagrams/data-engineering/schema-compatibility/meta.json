@@ -1,0 +1,8 @@
+{
+  "slug": "schema-compatibility",
+  "name": "Schema compatibility graph",
+  "aliases": [
+    "Schema evolution diagram",
+    "Reader-writer compatibility map"
+  ]
+}

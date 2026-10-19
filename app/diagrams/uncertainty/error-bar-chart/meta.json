@@ -1,0 +1,8 @@
+{
+  "slug": "error-bar-chart",
+  "name": "Error bar chart",
+  "aliases": [
+    "Point-interval chart",
+    "Dot-and-whisker chart"
+  ]
+}

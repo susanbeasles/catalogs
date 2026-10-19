@@ -1,0 +1,8 @@
+{
+  "json.schemas": [
+    { "fileMatch": ["/app/*/*/*/index.json"], "url": "./schemas/definition.schema.json#/$defs/index" },
+    { "fileMatch": ["/app/*/*/*/keywords.json"], "url": "./schemas/definition.schema.json#/$defs/keywords" },
+    { "fileMatch": ["/app/*/*/*/meta.json"], "url": "./schemas/definition.schema.json#/$defs/meta" },
+    { "fileMatch": ["/app/*/*/*/additionalInfo.json"], "url": "./schemas/definition.schema.json#/$defs/additionalInfo" }
+  ]
+}

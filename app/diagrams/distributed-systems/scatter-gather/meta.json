@@ -1,0 +1,7 @@
+{
+  "slug": "scatter-gather",
+  "name": "Scatter-gather diagram",
+  "aliases": [
+    "Fan-out aggregation diagram"
+  ]
+}

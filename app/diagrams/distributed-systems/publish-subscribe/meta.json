@@ -1,0 +1,8 @@
+{
+  "slug": "publish-subscribe",
+  "name": "Publish-subscribe diagram",
+  "aliases": [
+    "Pub/sub topology",
+    "Event distribution diagram"
+  ]
+}

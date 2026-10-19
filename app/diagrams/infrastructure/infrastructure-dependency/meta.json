@@ -1,0 +1,8 @@
+{
+  "slug": "infrastructure-dependency",
+  "name": "Infrastructure dependency graph",
+  "aliases": [
+    "IaC graph",
+    "Provisioning DAG"
+  ]
+}

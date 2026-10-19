@@ -1,0 +1,8 @@
+{
+  "slug": "roc-curve",
+  "name": "ROC curve",
+  "aliases": [
+    "Receiver operating characteristic",
+    "Sensitivity-specificity curve"
+  ]
+}

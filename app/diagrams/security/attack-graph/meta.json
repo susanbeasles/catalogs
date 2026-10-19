@@ -1,0 +1,8 @@
+{
+  "slug": "attack-graph",
+  "name": "Attack graph",
+  "aliases": [
+    "Attack-path graph",
+    "Exposure path map"
+  ]
+}

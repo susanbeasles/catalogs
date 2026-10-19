@@ -1,0 +1,8 @@
+{
+  "slug": "stream-processing",
+  "name": "Stream processing topology",
+  "aliases": [
+    "Streaming dataflow",
+    "Stream topology"
+  ]
+}

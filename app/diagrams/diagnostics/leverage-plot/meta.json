@@ -1,0 +1,8 @@
+{
+  "slug": "leverage-plot",
+  "name": "Leverage plot",
+  "aliases": [
+    "Residuals versus leverage",
+    "Influence bubble plot"
+  ]
+}

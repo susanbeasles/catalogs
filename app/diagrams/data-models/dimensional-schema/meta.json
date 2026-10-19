@@ -1,0 +1,8 @@
+{
+  "slug": "dimensional-schema",
+  "name": "Dimensional schema diagram",
+  "aliases": [
+    "Star schema",
+    "Snowflake schema"
+  ]
+}

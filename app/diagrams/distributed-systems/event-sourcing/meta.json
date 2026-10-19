@@ -1,0 +1,7 @@
+{
+  "slug": "event-sourcing",
+  "name": "Event sourcing diagram",
+  "aliases": [
+    "Event stream reconstruction diagram"
+  ]
+}

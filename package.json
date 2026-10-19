@@ -1,0 +1,13 @@
+{
+  "name": "catalogs", "version": "0.1.0", "private": true, "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "check": "tsc --noEmit",
+    "test": "node --test tests/*.test.ts",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "verify": "npm run build && npm run check && npm test && wrangler deploy --dry-run"
+  },
+  "devDependencies": { "@types/node": "24.19.2", "typescript": "5.9.3", "wrangler": "4.151.1" }
+}

@@ -1,0 +1,7 @@
+[
+  "cdc",
+  "transaction-log",
+  "snapshot",
+  "offsets",
+  "changes"
+]

@@ -1,0 +1,8 @@
+{
+  "slug": "role-permission-matrix",
+  "name": "Role-permission matrix",
+  "aliases": [
+    "RBAC matrix",
+    "Access-control matrix"
+  ]
+}

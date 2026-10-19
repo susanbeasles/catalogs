@@ -1,0 +1,7 @@
+{
+  "slug": "module-dependency",
+  "name": "Module dependency graph",
+  "aliases": [
+    "Import graph"
+  ]
+}

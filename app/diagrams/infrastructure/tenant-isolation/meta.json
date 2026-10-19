@@ -1,0 +1,8 @@
+{
+  "slug": "tenant-isolation",
+  "name": "Tenant isolation diagram",
+  "aliases": [
+    "SaaS tenancy map",
+    "Pooled and siloed resource map"
+  ]
+}

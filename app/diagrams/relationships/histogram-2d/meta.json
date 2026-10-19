@@ -1,0 +1,8 @@
+{
+  "slug": "histogram-2d",
+  "name": "2D histogram",
+  "aliases": [
+    "Rectangular binned heatmap",
+    "Bivariate histogram"
+  ]
+}

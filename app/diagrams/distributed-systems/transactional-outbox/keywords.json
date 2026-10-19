@@ -1,0 +1,7 @@
+[
+  "outbox",
+  "transaction",
+  "relay",
+  "idempotency",
+  "dual-write"
+]

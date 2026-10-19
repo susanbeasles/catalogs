@@ -1,0 +1,8 @@
+{
+  "slug": "backup-recovery",
+  "name": "Backup and restore diagram",
+  "aliases": [
+    "Recovery-point topology",
+    "Restore chain diagram"
+  ]
+}

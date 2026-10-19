@@ -1,0 +1,8 @@
+{
+  "slug": "isochrone-map",
+  "name": "Isochrone map",
+  "aliases": [
+    "Travel-time catchment map",
+    "Service-area map"
+  ]
+}

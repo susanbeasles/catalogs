@@ -1,0 +1,8 @@
+{
+  "slug": "oauth-authorization",
+  "name": "OAuth authorization diagram",
+  "aliases": [
+    "OAuth flow diagram",
+    "Authorization-code flow diagram"
+  ]
+}

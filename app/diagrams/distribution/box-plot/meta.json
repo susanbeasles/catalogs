@@ -1,0 +1,8 @@
+{
+  "slug": "box-plot",
+  "name": "Box plot",
+  "aliases": [
+    "Tukey box plot",
+    "Box-and-whisker plot"
+  ]
+}

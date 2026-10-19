@@ -1,0 +1,8 @@
+{
+  "slug": "regression-plot",
+  "name": "Regression plot",
+  "aliases": [
+    "Fitted relationship plot",
+    "Scatterplot with fit"
+  ]
+}

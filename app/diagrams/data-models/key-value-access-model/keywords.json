@@ -1,0 +1,7 @@
+[
+  "partition-key",
+  "sort-key",
+  "access-patterns",
+  "indexes",
+  "items"
+]

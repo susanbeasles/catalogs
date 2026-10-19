@@ -1,0 +1,8 @@
+{
+  "slug": "key-value-access-model",
+  "name": "Key-value access model",
+  "aliases": [
+    "Single-table access pattern diagram",
+    "DynamoDB data model"
+  ]
+}

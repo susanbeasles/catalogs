@@ -1,0 +1,8 @@
+{
+  "slug": "packet-format",
+  "name": "Packet format diagram",
+  "aliases": [
+    "Protocol header diagram",
+    "Bit-field layout"
+  ]
+}

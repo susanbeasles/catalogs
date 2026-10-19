@@ -1,0 +1,8 @@
+{
+  "slug": "causal-order",
+  "name": "Causal-order diagram",
+  "aliases": [
+    "Happens-before diagram",
+    "Logical-clock diagram"
+  ]
+}

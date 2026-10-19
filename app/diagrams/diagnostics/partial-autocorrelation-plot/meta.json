@@ -1,0 +1,8 @@
+{
+  "slug": "partial-autocorrelation-plot",
+  "name": "Partial autocorrelation plot",
+  "aliases": [
+    "PACF plot",
+    "Partial correlogram"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "cooks-distance-plot",
+  "name": "Cook’s distance plot",
+  "aliases": [
+    "Cook distance stem plot",
+    "Influence by observation"
+  ]
+}

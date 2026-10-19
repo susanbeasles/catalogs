@@ -1,0 +1,9 @@
+{
+  "slug": "event-raster",
+  "name": "Event raster",
+  "aliases": [
+    "Raster plot",
+    "Event plot",
+    "Spike raster"
+  ]
+}

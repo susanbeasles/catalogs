@@ -1,0 +1,8 @@
+{
+  "slug": "competing-consumers",
+  "name": "Competing-consumer diagram",
+  "aliases": [
+    "Work queue topology",
+    "Worker pool diagram"
+  ]
+}

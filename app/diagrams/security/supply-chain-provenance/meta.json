@@ -1,0 +1,8 @@
+{
+  "slug": "supply-chain-provenance",
+  "name": "Software supply-chain provenance graph",
+  "aliases": [
+    "Build provenance diagram",
+    "Artifact attestation graph"
+  ]
+}

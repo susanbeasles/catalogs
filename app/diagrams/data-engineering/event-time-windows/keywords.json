@@ -1,0 +1,7 @@
+[
+  "event-time",
+  "processing-time",
+  "watermarks",
+  "lateness",
+  "windows"
+]

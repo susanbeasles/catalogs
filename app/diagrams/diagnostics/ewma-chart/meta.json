@@ -1,0 +1,7 @@
+{
+  "slug": "ewma-chart",
+  "name": "EWMA chart",
+  "aliases": [
+    "Exponentially weighted moving average chart"
+  ]
+}

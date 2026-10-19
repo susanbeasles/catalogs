@@ -1,0 +1,8 @@
+{
+  "slug": "periodogram",
+  "name": "Periodogram",
+  "aliases": [
+    "Spectral plot",
+    "Power spectrum plot"
+  ]
+}

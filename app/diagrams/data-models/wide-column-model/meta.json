@@ -1,0 +1,7 @@
+{
+  "slug": "wide-column-model",
+  "name": "Wide-column data model",
+  "aliases": [
+    "Cassandra query model"
+  ]
+}

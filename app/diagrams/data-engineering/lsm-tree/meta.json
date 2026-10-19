@@ -1,0 +1,7 @@
+{
+  "slug": "lsm-tree",
+  "name": "LSM tree diagram",
+  "aliases": [
+    "Log-structured merge tree diagram"
+  ]
+}

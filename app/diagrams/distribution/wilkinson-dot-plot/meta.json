@@ -1,0 +1,8 @@
+{
+  "slug": "wilkinson-dot-plot",
+  "name": "Wilkinson dot plot",
+  "aliases": [
+    "Stacked dot histogram",
+    "Binned dot plot"
+  ]
+}

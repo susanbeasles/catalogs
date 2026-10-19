@@ -1,0 +1,9 @@
+{
+  "slug": "activity-network",
+  "name": "Activity network",
+  "aliases": [
+    "Precedence diagram",
+    "CPM network",
+    "PERT network"
+  ]
+}

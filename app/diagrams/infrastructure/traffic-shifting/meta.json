@@ -1,0 +1,8 @@
+{
+  "slug": "traffic-shifting",
+  "name": "Traffic-shifting deployment diagram",
+  "aliases": [
+    "Canary deployment diagram",
+    "Blue-green deployment diagram"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "correlation-matrix",
+  "name": "Correlation matrix",
+  "aliases": [
+    "Correlogram",
+    "Correlation heatmap"
+  ]
+}

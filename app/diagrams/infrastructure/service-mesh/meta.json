@@ -1,0 +1,7 @@
+{
+  "slug": "service-mesh",
+  "name": "Service mesh diagram",
+  "aliases": [
+    "Mesh control and data plane"
+  ]
+}

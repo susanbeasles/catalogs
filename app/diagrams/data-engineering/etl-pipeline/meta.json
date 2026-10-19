@@ -1,0 +1,8 @@
+{
+  "slug": "etl-pipeline",
+  "name": "ETL pipeline diagram",
+  "aliases": [
+    "ELT pipeline diagram",
+    "Batch data pipeline"
+  ]
+}

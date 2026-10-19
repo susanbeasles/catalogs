@@ -1,0 +1,8 @@
+{
+  "slug": "rdf-graph",
+  "name": "RDF graph",
+  "aliases": [
+    "Triple graph",
+    "Linked data graph"
+  ]
+}

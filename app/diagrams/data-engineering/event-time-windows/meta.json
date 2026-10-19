@@ -1,0 +1,7 @@
+{
+  "slug": "event-time-windows",
+  "name": "Event-time window diagram",
+  "aliases": [
+    "Windowing and watermark diagram"
+  ]
+}

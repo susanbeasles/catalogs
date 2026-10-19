@@ -1,0 +1,8 @@
+{
+  "slug": "density-plot",
+  "name": "Density plot",
+  "aliases": [
+    "Kernel density estimate",
+    "KDE plot"
+  ]
+}

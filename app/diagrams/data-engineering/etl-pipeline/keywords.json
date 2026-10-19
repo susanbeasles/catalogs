@@ -1,0 +1,7 @@
+[
+  "extract",
+  "transform",
+  "load",
+  "batch",
+  "staging"
+]

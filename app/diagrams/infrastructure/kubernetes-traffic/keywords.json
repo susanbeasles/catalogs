@@ -1,0 +1,7 @@
+[
+  "ingress",
+  "service",
+  "endpoints",
+  "pods",
+  "networking"
+]

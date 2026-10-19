@@ -1,0 +1,8 @@
+{
+  "slug": "clustered-heatmap",
+  "name": "Clustered heatmap",
+  "aliases": [
+    "Dendrogram heatmap",
+    "Clustermap"
+  ]
+}

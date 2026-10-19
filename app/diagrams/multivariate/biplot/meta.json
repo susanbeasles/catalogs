@@ -1,0 +1,8 @@
+{
+  "slug": "biplot",
+  "name": "Biplot",
+  "aliases": [
+    "PCA biplot",
+    "Scores-and-loadings plot"
+  ]
+}

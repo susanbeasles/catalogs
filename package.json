@@ -9,5 +9,5 @@
     "deploy": "npm run build && wrangler deploy",
     "verify": "npm run build && npm run check && npm test && wrangler deploy --dry-run"
   },
-  "devDependencies": { "@types/node": "24.19.2", "typescript": "5.9.3", "wrangler": "4.151.1" }
+  "devDependencies": { "@types/node": "24.19.2", "typescript": "5.9.3", "wrangler": "4.157.0" }
 }
